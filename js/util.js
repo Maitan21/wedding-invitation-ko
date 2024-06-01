@@ -209,7 +209,6 @@ export const util = (() => {
 
     }
     const open = async (button) => {
-        console.log(button);
         button.disabled = true;
         confetti({
             origin: { y: 1 },
