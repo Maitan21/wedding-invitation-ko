@@ -831,7 +831,7 @@
                         <div id="form-confirm"></div>
                         <div class="row">
                             <div class="col-6">
-                                <button id="confirmBtn" type="button" class="btn btn-light shadow rounded-4"  data-bs-dismiss="modal" onclick="confirm()">
+                                <button id="confirmBtn" type="button" class="btn btn-light shadow rounded-4" onclick="confirm()">
                                     <i class="fa-solid fa-circle-check"></i> 전송
                                 </button>
                             </div>
@@ -974,11 +974,10 @@
                 type: `POST`, // form의 method 속성으로 요청 방식 설정
                 data: data, // form 데이터 설정
                 success: function(response){
-                    // 성공 시 수행할 작업
-                if(confirm("데이터가 확인되었습니다.")) {
-                    formData ={};
+                    // 성공 시 수행할 작업                   
+                    formData = {};
                     document.getElementById('form').reset();
-                    }
+                    $('#modal-confirm').modal('hide');
                 },
                 error: function(xhr, status, error){
                     // 오류 시 수행할 작업
