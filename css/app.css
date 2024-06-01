@@ -16,7 +16,7 @@ body:lang(jp){
 
 @font-face {
     font-family: francisco;
-    src: url(/assets/fonts/Francisco.otf) format("opentype");
+    src: url(./assets/fonts/Francisco.otf) format("opentype");
     font-display: auto;
     font-style: normal;
     font-weight: 400;
