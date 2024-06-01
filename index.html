@@ -975,9 +975,10 @@
                 data: data, // form 데이터 설정
                 success: function(response){
                     // 성공 시 수행할 작업
-                    alert('데이터가 확인되었습니다.');
+                if(confirm("데이터가 확인되었습니다.")) {
                     formData ={};
                     document.getElementById('form').reset();
+                    }
                 },
                 error: function(xhr, status, error){
                     // 오류 시 수행할 작업
