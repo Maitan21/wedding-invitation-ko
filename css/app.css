@@ -633,6 +633,10 @@ body:lang(jp){
     font-family: francisco;
 }
 
+.ft-gowunbatang{
+  font-family: "Gowun Batang", serif;
+}
+
 .sectionEntry{
     font-size: 1.5em;
 }
