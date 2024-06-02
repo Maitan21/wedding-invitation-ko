@@ -52,10 +52,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" integrity="sha256-GqiEX9BuR1rv5zPU5Vs2qS/NSHl1BJyBcjQYJ6ycwD4=" crossorigin="anonymous">
 
     <!-- Fonts -->
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"> -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap"> -->
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://w.theirmood.com/src/wdd/card.fonts.responsive.show.css?time=0004"> 
@@ -63,204 +60,7 @@
     <!-- App -->
     <link rel="stylesheet" href="./css/app.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/app.js" type="module" defer></script>
-
-    <style>
-        .namecontainer {
-            display: flex !important;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-          }
-          .namerow {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%; /* 원하는 너비 설정 */
-            max-width: 400px; /* 원하는 최대 너비 설정 */
-            margin-bottom: 1rem;
-          }
-          .namerow span {
-            display: inline-block;
-          }
-
-          .plane-switch {
-            --dot: #fff;
-            --street: #6B6D76;
-            --street-line: #A8AAB4;
-            --street-line-mid: #C0C2C8;
-            --sky-1: #60A7FA;
-            --sky-2: #2F8EFC;
-            --light-1: rgba(255, 233, 0, 1);
-            --light-2: rgba(255, 233, 0, .3);
-            cursor: pointer;
-            -webkit-tap-highlight-color: transparent;
-          }
-          
-          .plane-switch input {
-            display: none;
-          }
-          
-          .plane-switch input + div {
-            -webkit-mask-image: -webkit-radial-gradient(white, black);
-            position: relative;
-            overflow: hidden;
-            width: 50px;
-            height: 25px;
-            padding: 1px;
-            border-radius: 13px;
-            background: linear-gradient(90deg, var(--street) 0%, var(--street) 25%, var(--sky-1) 75%, var(--sky-2) 100%) left var(--p, 0%) top 0;
-            background-position-x: var(--p, 0%);
-            background-size: 400% auto;
-            transition: background-position 0.6s;
-          }
-          
-          .plane-switch input + div:before, .plane-switch input + div:after {
-            content: "";
-            display: block;
-            position: absolute;
-            transform: translateX(var(--s, 0));
-            transition: transform 0.3s;
-          }
-          
-          .plane-switch input + div:before {
-            width: 42px;
-            right: 2px;
-            top: 4px;
-            height: 1px;
-            background: var(--street-line);
-            box-shadow: 0 16px 0 0 var(--street-line);
-          }
-          
-          .plane-switch input + div:after {
-            width: 2px;
-            height: 2px;
-            border-radius: 50%;
-            left: 23px;
-            top: 1px;
-            -webkit-animation: lights2 2s linear infinite;
-            animation: lights2 2s linear infinite;
-            box-shadow: inset 0 0 0 2px var(--light-1), 0 21px 0 var(--light-1), 8px 0 0 var(--light-2), 8px 21px 0 var(--light-2), 16px 0 0 var(--light-2), 16px 21px 0 var(--light-2);
-          }
-          
-          .plane-switch input + div span {
-            display: block;
-            position: absolute;
-          }
-          
-          .plane-switch input + div span.street-middle {
-            top: 12px;
-            left: 21px;
-            width: 3px;
-            height: 1px;
-            transform: translateX(var(--s, 0));
-            background: var(--street-line-mid);
-            box-shadow: 5px 0 0 var(--street-line-mid), 10px 0 0 var(--street-line-mid), 15px 0 0 var(--street-line-mid), 20px 0 0 var(--street-line-mid), 25px 0 0 var(--street-line-mid);
-            transition: transform 0.3s;
-          }
-          
-          .plane-switch input + div span.cloud {
-            width: 12px;
-            height: 4px;
-            border-radius: 2px;
-            background: #fff;
-            position: absolute;
-            top: var(--ct, 8px);
-            left: 100%;
-            opacity: var(--co, 0);
-            transition: opacity 0.3s;
-            -webkit-animation: clouds2 2s linear infinite var(--cd, 0s);
-            animation: clouds2 2s linear infinite var(--cd, 0s);
-          }
-          
-          .plane-switch input + div span.cloud:before, .plane-switch input + div span.cloud:after {
-            content: "";
-            position: absolute;
-            transform: translateX(var(--cx, 0));
-            border-radius: 50%;
-            width: var(--cs, 5px);
-            height: var(--cs, 5px);
-            background: #fff;
-            bottom: 1px;
-            left: 1px;
-          }
-          
-          .plane-switch input + div span.cloud:after {
-            --cs: 6px;
-            --cx: 4px;
-          }
-          
-          .plane-switch input + div span.cloud.two {
-            --ct: 20px;
-            --cd: 1s;
-            opacity: var(--co-2, 0);
-          }
-          
-          .plane-switch input + div div {
-            display: table;
-            position: relative;
-            z-index: 1;
-            padding: 5px;
-            border-radius: 50%;
-            background: var(--dot);
-            transform: translateX(var(--x, 0));
-            transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.35, 1.2);
-          }
-          
-          .plane-switch input + div div svg {
-            width: 13px;
-            height: 13px;
-            display: block;
-            color: var(--c, var(--street));
-            transition: color 0.6s;
-          }
-          
-          .plane-switch input:checked + div {
-            --p: 100%;
-            --x: 25px;
-            --s: -50px;
-            --c: var(--sky-2);
-            --co: .8;
-            --co-2: .6;
-          }
-          
-          @keyframes lights2 {
-            20%, 30% {
-              box-shadow: inset 0 0 0 2px var(--light-2), 0 21px 0 var(--light-2), 8px 0 0 var(--light-1), 8px 21px 0 var(--light-1), 16px 0 0 var(--light-2), 16px 21px 0 var(--light-2);
-            }
-          
-            55%, 65% {
-              box-shadow: inset 0 0 0 2px var(--light-2), 0 21px 0 var(--light-2), 8px 0 0 var(--light-2), 8px 21px 0 var(--light-2), 16px 0 0 var(--light-1), 16px 21px 0 var(--light-1);
-            }
-          
-            90%, 100% {
-              box-shadow: inset 0 0 0 2px var(--light-1), 0 21px 0 var(--light-1), 8px 0 0 var(--light-2), 8px 21px 0 var(--light-2), 16px 0 0 var(--light-2), 16px 21px 0 var(--light-2);
-            }
-          }
-          
-          @keyframes clouds2 {
-            97% {
-              transform: translateX(-72px);
-              visibility: visible;
-            }
-          
-            98%, 100% {
-              visibility: hidden;
-            }
-          
-            99% {
-              transform: translateX(-72px);
-            }
-          
-            100% {
-              transform: translateX(0);
-            }
-          }
-          
-    </style>
-
-    
-    
+    <script src="./js/app.js" type="module" defer></script>    
 </head>
 
 <body>
@@ -273,8 +73,7 @@
             <div class="text-center">
                 <h1 class="ft-francisco mb-0" style="padding:30px 0 30px; font-size: 3.2rem;">We are getting married</h1>
                 <!-- <h1 class="font-esthetic" style="font-size: 2rem; margin-bottom: 0"></h1> -->
-                
-
+        
                 <div style="padding-bottom: 30px;">
                     <!-- img-crop -->
                     <div class="img-main border border-3 border-light shadow mx-auto">
@@ -286,12 +85,8 @@
                 <h1 class="ft-gowundodum mb-2">윤　상｜마　이</h1>
                 <p class="ft-gowundodum mb-4">2024년 10월 19일 토요일<br>호텔 로열 클래식 오사카 20F 大空</p>
 
-                <!-- <a class="btn btn-outline-light btn-sm shadow rounded-pill px-3 my-2" target="_blank" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=The%20Wedding%20of%20Wahyu%20and%20Riski&details=The%20Wedding%20of%20Wahyu%20and%20Riski%20%7C%2015%20Maret%202023%20%7C%20RT%2010%20RW%2002,%20Desa%20Pajerukan,%20Kec.%20Kalibagor,%20Kab.%20Banyumas,%20Jawa%20Tengah%2053191%20%7C%2010.00%20-%2011.00%20WIB&dates=20230315T100000/20230315T110000&location=https://goo.gl/maps/ALZR6FJZU3kxVwN86">
-                    <i class="fa-solid fa-calendar-check me-2"></i>Save The Date
-                </a> -->
-
                 <a href="https://maps.app.goo.gl/N5sjUiN1pEjKyTAo7" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
-                    <i class="fa-solid fa-map-location-dot me-2"></i>Lihat Google Maps
+                    <i class="fa-solid fa-map-location-dot me-2"></i>Google Maps
                 </a> 
                 <!-- <div class="d-flex justify-content-center align-items-center mt-1 mb-2">
                     <div class="mouse-animation border border-2">
@@ -310,37 +105,10 @@
 
         <!-- Mempelai -->
         <section class="dark-section bg-black" id="mempelai">
-
             <div class="text-center">
-                <!-- <h1 class="font-arabic py-4 px-2" style="font-size: 2rem">작성중</h1> -->
-
-                <!-- Love animation -->
-                <!-- <div class="position-relative">
-                    <div class="position-absolute" style="top: 0%; right: 10%;">
-                        <svg xmlns="https://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="opacity-50" onload="util.animate(this, 500, 'animate-love')" viewBox="0 0 16 16">
-                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                        </svg>
-                    </div>
-                </div> -->
-<!-- 
-                <h1 class="font-esthetic py-4 px-2" style="font-size: 2rem">작성중h</h1>
-
-                <p class="pb-3 px-3">
-                    작성중
-                </p> -->
-
-                <!-- Love animation -->
-                <!-- <div class="position-relative">
-                    <div class="position-absolute" style="top: 0%; left: 10%;">
-                        <svg xmlns="https://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="opacity-50" onload="util.animate(this, 2000, 'animate-love')" viewBox="0 0 16 16">
-                            <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                        </svg>
-                    </div>
-                </div> -->
-
                 <div class="overflow-x-hidden">
 
-                    <div data-aos="fade-right" data-aos-duration="2000">
+                    <div class="mb-4" data-aos="fade-right" data-aos-duration="1500">
                         <!-- <div class="img-crop border border-3 border-light shadow my-4 mx-auto">
                             <img src="./assets/images/cowo.png" alt="cowo" onclick="util.modal(this)">
                         </div> -->
@@ -350,29 +118,11 @@
                         
                         <span class="ft-gowundodum mb-4"><span style="font-weight: bold;">조여근 ・ 이영숙</span><span style="font-size: 0.8rem;">의 장남</span><span style="font-weight: bold;">조윤상(曺 允相)</span><br>
                         <span class="ft-gowundodum mb-4"><span style="font-weight: bold;">시게야 ・ 하루에</span><span style="font-size: 0.8rem;">의 차녀</span><span style="font-weight: bold;">카메오카 마이(亀岡 真衣)</span>
-                    </div>
+                    </div>      
 
-                    <!-- Love animation -->
-                    <!-- <div class="position-relative">
-                        <div class="position-absolute" style="top: 0%; right: 10%;">
-                            <svg xmlns="https://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="opacity-50" onload="util.animate(this, 3000, 'animate-love')" viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                            </svg>
-                        </div>
-                    </div> -->
-
-                    <!-- <h1 class="font-esthetic my-4" style="font-size: 4rem;">&</h1> -->
-
-                    <!-- Love animation -->
-                    <!-- <div class="position-relative">
-                        <div class="position-absolute" style="top: 0%; left: 10%;">
-                            <svg xmlns="https://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="opacity-50" onload="util.animate(this, 2000, 'animate-love')" viewBox="0 0 16 16">
-                                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143q.09.083.176.171a3 3 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15" />
-                            </svg>
-                        </div>
-                    </div> -->
-
-          
+                    <!-- <div class="ft-gowundodum" id="guest-name" data-message="친애하는"></div> -->
+                    <div id="req-message" class="pt-4"></div>
+                     
                 </div>
 
                 <!-- Ballon animation -->
@@ -395,72 +145,28 @@
         <!-- Firman Allah Subhanahu Wa Ta'ala -->
         <div class="container">
             <div class="text-center">
-                <h1 class="sectionEng ft-crimsonpro mb-0" >Galeri</h1>
-                <h1 class="sectionHead ft-gowundodum mb-4" >갤러리</h1>
+                <div data-aos="fade-down" data-aos-duration="1500">
+                    <h1 class="sectionEng ft-crimsonpro mb-0" >Galeri</h1>
+                    <h1 class="sectionHead ft-gowundodum mb-4" >갤러리</h1>
+                    
+                </div>
+               
 
-
-                <div id="carousel-image-one" data-aos="fade-up" data-aos-duration="1500" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carousel-image-one" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
-
-                    <div class="carousel-inner rounded-4">
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/1280/720?random=1" alt="gambar 1" class="d-block w-100" onclick="util.modal(this)">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/1280/720?random=2" alt="gambar 2" class="d-block w-100" onclick="util.modal(this)">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/1280/720?random=3" alt="gambar 3" class="d-block w-100" onclick="util.modal(this)">
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-one" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-one" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
+                <div class="gallGridWrapper" data-aos="fade-down" data-aos-duration="1500">
+                        <div data-url="https://picsum.photos/1280/720?random=1" style="background-image:url(https://picsum.photos/1280/720?random=1)" alt="gambar 1" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=2" style="background-image:url(https://picsum.photos/1280/720?random=2)" alt="gambar 2" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=3" style="background-image:url(https://picsum.photos/1280/720?random=3)" alt="gambar 3" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=4" style="background-image:url(https://picsum.photos/1280/720?random=4)" alt="gambar 4" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=5" style="background-image:url(https://picsum.photos/1280/720?random=5)" alt="gambar 5" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=6" style="background-image:url(https://picsum.photos/1280/720?random=6)" alt="gambar 6" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=7" style="background-image:url(https://picsum.photos/1280/720?random=7)" alt="gambar 7" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=8" style="background-image:url(https://picsum.photos/1280/720?random=8)" alt="gambar 8" class="item"  onclick="util.modal(this)"></div>
+                        <div data-url="https://picsum.photos/1280/720?random=9" style="background-image:url(https://picsum.photos/1280/720?random=9)" alt="gambar 9" class="item"  onclick="util.modal(this)"></div>
                 </div>
 
-                <div id="carousel-image-two" data-aos="fade-up" data-aos-duration="1500" class="carousel slide mt-4" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
-                        <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                        <button type="button" data-bs-target="#carousel-image-two" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                    </div>
 
-                    <div class="carousel-inner rounded-4">
-                        <div class="carousel-item active">
-                            <img src="https://picsum.photos/1280/720?random=4" alt="gambar 4" class="d-block w-100" onclick="util.modal(this)">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/1280/720?random=5" alt="gambar 5" class="d-block w-100" onclick="util.modal(this)">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="https://picsum.photos/1280/720?random=6" alt="gambar 6" class="d-block w-100" onclick="util.modal(this)">
-                        </div>
-                    </div>
-
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carousel-image-two" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                    </button>
-
-                    <button class="carousel-control-next" type="button" data-bs-target="#carousel-image-two" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                    </button>
-                </div>
-                <div  data-aos="fade-left" data-aos-duration="1500">
+                <div  data-aos="fade-up" data-aos-duration="1500">
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mt-4 mb-4">
-
                         <!-- Ganti waktunya pada data-waktu (sesuai format tersebut) -->
                         <div class="row justify-content-center" data-time="2024-10-19 00:00:00" id="count-down">
                             <div class="col-3 p-1">
@@ -478,7 +184,7 @@
                         </div>
                     </div>
                 </div>
-                <div data-aos="fade-right" data-aos-duration="1500">
+                <div data-aos="fade-up" data-aos-duration="1500">
                     <p class="ft-gowundodum mb-4">윤상 <span style="color: #ea7664;"">♥</span> 마이의 결혼식이<span id="countdown"></span></p>
                 </div>
                 
@@ -504,10 +210,11 @@
 
             <div class="container" style="max-width:500px">
                 <div class="text-center">
-
-                    <h1 class="sectionEng ft-crimsonpro mb-0" >Schedule</h1>
-                    <h1 class="sectionHead ft-gowundodum" >일　정</h1>
-
+                    <div data-aos="fade-down" data-aos-duration="1500">
+                        <h1 class="sectionEng ft-crimsonpro mb-0" >Schedule</h1>
+                        <h1 class="sectionHead ft-gowundodum" >일　정</h1>
+                    </div>
+                   
                     <!-- Love animation -->
                     <div class="position-relative">
                         <div class="position-absolute" style="top: 0%; right: 10%;">
@@ -518,9 +225,15 @@
                     </div>
 
                     <div class="overflow-x-hidden">
+                        <div id="family-reception" class="py-2" data-aos="fade-left" data-aos-duration="1500">
+
+                        </div>
+                        <div id="family-photo" class="py-2" data-aos="fade-left" data-aos-duration="1500">
+
+                        </div>
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
                             <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">접수・대기실</h1>
-                            <p>14:00　5층 ー 日和</p>
+                            <p>14:30　5층 ー 日和</p>
                         </div>
                         <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
                             <h1 class="ft-gowundodum" style="font-size: 1.1rem; font-weight:bold">거식</h1>
@@ -615,118 +328,118 @@
             <path fill="currentColor" fill-opacity="1" d="M0,96L30,106.7C60,117,120,139,180,154.7C240,171,300,181,360,186.7C420,192,480,192,540,181.3C600,171,660,149,720,154.7C780,160,840,192,900,208C960,224,1020,224,1080,208C1140,192,1200,160,1260,138.7C1320,117,1380,107,1410,101.3L1440,96L1440,0L1410,0C1380,0,1320,0,1260,0C1200,0,1140,0,1080,0C1020,0,960,0,900,0C840,0,780,0,720,0C660,0,600,0,540,0C480,0,420,0,360,0C300,0,240,0,180,0C120,0,60,0,30,0L0,0Z"></path>
         </svg>
 
-        <!-- Love Gift -->
+        <!-- 참석 여부  -->
         <div class="container" style="max-width: 500px;">
         
             <div class="text-center">
-                    <div class="row justify-content-center">
-                        <div class="card-body border rounded-4 shadow p-3 m-3" data-aos="fade-down" data-aos-duration="1500">
-                            <form id="form" action="" onsubmit="send(this);">
-                                <h1 class="sectionEng ft-crimsonpro mb-0" >REGISTER</h1>
-                                <h1 class="sectionHead ft-gowundodum" >참석 여부</h1>
-                                <p class=" ft-gowundodum" style="font-size: 0.8rem; color: red;">※일본 결혼식은 초대된 사람만 입장 가능하므로 <br>번거로우시겠지만 참석 여부를 회신해 주시기 바랍니다. </p>
-                                <div class="row">
-                                    <div class="col-4 ft-gowundodum" style="text-align: right;">미참석</div>
-                                    <div class="col-4">
-                                        <label class="plane-switch">
-                                            <input id="presence" type="checkbox" checked>
+                <div class="row justify-content-center">
+                    <div class="card-body border rounded-4 shadow p-3 m-3" data-aos="fade-down" data-aos-duration="1500">
+                        <form id="form" action="" onsubmit="send(this);">
+                            <h1 class="sectionEng ft-crimsonpro mb-0" >RSVP</h1>
+                            <h1 class="sectionHead ft-gowundodum" >참석 여부</h1>
+                            <p class=" ft-gowundodum" style="font-size: 0.8rem; color: red;">※결혼식 참석인원이 한정된 관계로 <br>번거로우시겠지만 참석 여부를 회신해 주시기 바랍니다. </p>
+                            <div class="row">
+                                <div class="col-4 ft-gowundodum" style="text-align: right;">미참석</div>
+                                <div class="col-4">
+                                    <label class="plane-switch">
+                                        <input id="presence" type="checkbox" checked>
+                                        <div>
                                             <div>
-                                                <div>
-                                                    <svg viewBox="0 0 13 13">
-                                                        <path d="M1.55989957,5.41666667 L5.51582215,5.41666667 L4.47015462,0.108333333 L4.47015462,0.108333333 C4.47015462,0.0634601974 4.49708054,0.0249592654 4.5354546,0.00851337035 L4.57707145,0 L5.36229752,0 C5.43359776,0 5.50087375,0.028779451 5.55026392,0.0782711996 L5.59317877,0.134368264 L7.13659662,2.81558333 L8.29565964,2.81666667 C8.53185377,2.81666667 8.72332694,3.01067661 8.72332694,3.25 C8.72332694,3.48932339 8.53185377,3.68333333 8.29565964,3.68333333 L7.63589819,3.68225 L8.63450135,5.41666667 L11.9308317,5.41666667 C12.5213171,5.41666667 13,5.90169152 13,6.5 C13,7.09830848 12.5213171,7.58333333 11.9308317,7.58333333 L8.63450135,7.58333333 L7.63589819,9.31666667 L8.29565964,9.31666667 C8.53185377,9.31666667 8.72332694,9.51067661 8.72332694,9.75 C8.72332694,9.98932339 8.53185377,10.1833333 8.29565964,10.1833333 L7.13659662,10.1833333 L5.59317877,12.8656317 C5.55725264,12.9280353 5.49882018,12.9724157 5.43174295,12.9907056 L5.36229752,13 L4.57707145,13 L4.55610333,12.9978962 C4.51267695,12.9890959 4.48069792,12.9547924 4.47230803,12.9134397 L4.47223088,12.8704208 L5.51582215,7.58333333 L1.55989957,7.58333333 L0.891288881,8.55114605 C0.853775374,8.60544678 0.798421006,8.64327676 0.73629202,8.65879796 L0.672314689,8.66666667 L0.106844414,8.66666667 L0.0715243949,8.66058466 L0.0715243949,8.66058466 C0.0297243066,8.6457608 0.00275502199,8.60729104 0,8.5651586 L0.00593007386,8.52254537 L0.580855011,6.85813984 C0.64492547,6.67265611 0.6577034,6.47392717 0.619193545,6.28316421 L0.580694768,6.14191703 L0.00601851064,4.48064746 C0.00203480725,4.4691314 0,4.45701613 0,4.44481314 C0,4.39994001 0.0269259152,4.36143908 0.0652999725,4.34499318 L0.106916826,4.33647981 L0.672546853,4.33647981 C0.737865848,4.33647981 0.80011301,4.36066329 0.848265401,4.40322477 L0.89131128,4.45169723 L1.55989957,5.41666667 Z" fill="currentColor"></path>
-                                                    </svg>
-                                                </div>
-                                                <span class="street-middle"></span>
-                                                <span class="cloud"></span>
-                                                <span class="cloud two"></span>
+                                                <svg viewBox="0 0 13 13">
+                                                    <path d="M1.55989957,5.41666667 L5.51582215,5.41666667 L4.47015462,0.108333333 L4.47015462,0.108333333 C4.47015462,0.0634601974 4.49708054,0.0249592654 4.5354546,0.00851337035 L4.57707145,0 L5.36229752,0 C5.43359776,0 5.50087375,0.028779451 5.55026392,0.0782711996 L5.59317877,0.134368264 L7.13659662,2.81558333 L8.29565964,2.81666667 C8.53185377,2.81666667 8.72332694,3.01067661 8.72332694,3.25 C8.72332694,3.48932339 8.53185377,3.68333333 8.29565964,3.68333333 L7.63589819,3.68225 L8.63450135,5.41666667 L11.9308317,5.41666667 C12.5213171,5.41666667 13,5.90169152 13,6.5 C13,7.09830848 12.5213171,7.58333333 11.9308317,7.58333333 L8.63450135,7.58333333 L7.63589819,9.31666667 L8.29565964,9.31666667 C8.53185377,9.31666667 8.72332694,9.51067661 8.72332694,9.75 C8.72332694,9.98932339 8.53185377,10.1833333 8.29565964,10.1833333 L7.13659662,10.1833333 L5.59317877,12.8656317 C5.55725264,12.9280353 5.49882018,12.9724157 5.43174295,12.9907056 L5.36229752,13 L4.57707145,13 L4.55610333,12.9978962 C4.51267695,12.9890959 4.48069792,12.9547924 4.47230803,12.9134397 L4.47223088,12.8704208 L5.51582215,7.58333333 L1.55989957,7.58333333 L0.891288881,8.55114605 C0.853775374,8.60544678 0.798421006,8.64327676 0.73629202,8.65879796 L0.672314689,8.66666667 L0.106844414,8.66666667 L0.0715243949,8.66058466 L0.0715243949,8.66058466 C0.0297243066,8.6457608 0.00275502199,8.60729104 0,8.5651586 L0.00593007386,8.52254537 L0.580855011,6.85813984 C0.64492547,6.67265611 0.6577034,6.47392717 0.619193545,6.28316421 L0.580694768,6.14191703 L0.00601851064,4.48064746 C0.00203480725,4.4691314 0,4.45701613 0,4.44481314 C0,4.39994001 0.0269259152,4.36143908 0.0652999725,4.34499318 L0.106916826,4.33647981 L0.672546853,4.33647981 C0.737865848,4.33647981 0.80011301,4.36066329 0.848265401,4.40322477 L0.89131128,4.45169723 L1.55989957,5.41666667 Z" fill="currentColor"></path>
+                                                </svg>
                                             </div>
-                                        </label>
+                                            <span class="street-middle"></span>
+                                            <span class="cloud"></span>
+                                            <span class="cloud two"></span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <div class="col-4 ft-gowundodum" style="text-align: left;">참석
+                                </div>
+                                
+                            </div>
+                            
+
+                            <div>
+                                <label class="ui-wrapper mb-2">
+                                    <div class="input-wrapper">
+                                        <div class="namefield ft-gowundodum">
+                                            <input maxlength="11" id="name" type="text" placeholder="성함을 영문명으로 작성해주세요" required>
+                                        </div>
                                     </div>
-                                    <div class="col-4 ft-gowundodum" style="text-align: left;">참석
+                                    <div style="padding-left: 0.3rem; color:red;">
+                                        *
                                     </div>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label class="ui-wrapper mb-2" style="padding-left: 0;">
+                                    <input checked="" id="Korea" name="flag" type="radio">
+                                    <input id="Korea" name="flag" type="radio">
+                                    <input id="Japan" name="flag" type="radio">
+                                    <input class="dropdown-checkbox" name="dropdown" id="dropdown" type="checkbox">
+                                    <label class="dropdown-container" for="dropdown"></label>
+                                    <div class="input-wrapper">
+                                        <div class="phonefield ft-gowundodum">
+                                            <input oninput="oninputPhone(this)" maxlength="13" id="phonenumber" type="text"  placeholder="전화번호" required >
+                                        </div>
+                                    </div>
+                                    <div style="padding-left: 0.3rem; color:red;">
+                                        *
+                                    </div>
+                                    <div class="select-wrapper">
+                                        <ul>
+                                            <li class="Korea"><label for="Korea"><span>🇰🇷</span>한국 (+82)</label></li>
+                                            <li class="Japan"><label for="Japan"><span>🇯🇵</span>일본 (+81)</label></li>
+                                        </ul>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div>
+                                <label class="ui-wrapper mb-2" >
+                                    <div class="input-wrapper">
+                                        <div class="namefield ft-gowundodum">
+                                            <input id="email" type="text" placeholder="이메일 주소를 입력해주세요">
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+                            
+                            <div>
+                                <label class="ui-wrapper mb-2">
+                                    <div class="input-wrapper">
+                                        <div class="namefield ft-gowundodum">
+                                            <input id="alergy" type="text" placeholder="알레르기가 있으시면 작성해주세요" >
+                                        </div>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="ft-gowundodum mt-2 mb-2">【간사이 이외지역에서 오시는 분 체크필수】</div>
+                            <div class="checkbox-wrapper">
+                                <input id="terms-checkbox-37" name="checkbox" type="checkbox">
+                                <label class="terms-label" for="terms-checkbox-37">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
+                                    <mask fill="white" id="path-1-inside-1_476_5-37">
+                                        <rect height="200" width="200"></rect>
+                                    </mask>
+                                    <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
+                                    <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
+                                    </svg>
                                     
-                                </div>
-                                
-
-                                <div>
-                                    <label class="ui-wrapper mb-2">
-                                        <div class="input-wrapper">
-                                            <div class="namefield ft-gowundodum">
-                                                <input maxlength="11" id="name" type="text" placeholder="성함" required>
-                                            </div>
-                                        </div>
-                                        <div style="padding-left: 0.3rem; color:red;">
-                                            *
-                                        </div>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label class="ui-wrapper mb-2" style="padding-left: 0;">
-                                        <input checked="" id="Korea" name="flag" type="radio">
-                                        <input id="Korea" name="flag" type="radio">
-                                        <input id="Japan" name="flag" type="radio">
-                                        <input class="dropdown-checkbox" name="dropdown" id="dropdown" type="checkbox">
-                                        <label class="dropdown-container" for="dropdown"></label>
-                                        <div class="input-wrapper">
-                                            <div class="phonefield ft-gowundodum">
-                                                <input oninput="oninputPhone(this)" maxlength="13" id="phonenumber" type="text"  placeholder="전화번호" required >
-                                            </div>
-                                        </div>
-                                        <div style="padding-left: 0.3rem; color:red;">
-                                            *
-                                        </div>
-                                        <div class="select-wrapper">
-                                            <ul>
-                                                <li class="Korea"><label for="Korea"><span>🇰🇷</span>한국 (+82)</label></li>
-                                                <li class="Japan"><label for="Japan"><span>🇯🇵</span>일본 (+81)</label></li>
-                                            </ul>
-                                        </div>
-                                    </label>
-                                </div>
-
-                                <div>
-                                    <label class="ui-wrapper mb-2" >
-                                        <div class="input-wrapper">
-                                            <div class="namefield ft-gowundodum">
-                                                <input id="email" type="text" placeholder="이메일 주소를 입력해주세요">
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-                                
-                                <div>
-                                    <label class="ui-wrapper mb-2">
-                                        <div class="input-wrapper">
-                                            <div class="namefield ft-gowundodum">
-                                                <input id="alergy" type="text" placeholder="알레르기가 있으시면 작성해주세요" >
-                                            </div>
-                                        </div>
-                                    </label>
-                                </div>
-
-                                <div class="ft-gowundodum mt-2 mb-2">【간사이 이외지역에서 오시는 분 체크필수】</div>
-                                <div class="checkbox-wrapper">
-                                    <input id="terms-checkbox-37" name="checkbox" type="checkbox">
-                                    <label class="terms-label" for="terms-checkbox-37">
-                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 200 200" class="checkbox-svg">
-                                        <mask fill="white" id="path-1-inside-1_476_5-37">
-                                            <rect height="200" width="200"></rect>
-                                        </mask>
-                                        <rect mask="url(#path-1-inside-1_476_5-37)" stroke-width="40" class="checkbox-box" height="200" width="200"></rect>
-                                        <path stroke-width="15" d="M52 111.018L76.9867 136L149 64" class="checkbox-tick"></path>
-                                        </svg>
-                                        
-                                    </label>
-                                    </div>                                      
-                                <div class="mt-2 ft-gowundodum" style="font-size:0.8rem; color:red; font-weight:bold;">교통비 일괄 3만엔 지원</div>
-                                
-                                <button type="submit" class="btn btn-light shadow rounded-4 mt-2">
-                                    <i class="fa-solid fa-envelope me-2 "></i><span class="ft-gowundodum">참석</span>
-                                </button>
-                            </form>
-                        </div>
+                                </label>
+                                </div>                                      
+                            <div class="mt-2 ft-gowundodum" style="font-size:0.8rem; color:red; font-weight:bold;">교통비 일괄 3만엔 지원</div>
+                            
+                            <button type="submit" class="btn btn-light shadow rounded-4 mt-2">
+                                <i class="fa-solid fa-envelope me-2 "></i><span class="ft-gowundodum">참석</span>
+                            </button>
+                        </form>
                     </div>
+                </div>
             </div>
            
         </div>
@@ -753,8 +466,14 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div >
                         <small class="text-light">
-                            Coded with<i class="fa-solid fa-heart mx-1"></i>Yoonsang
+                            Coded with<i class="fa-solid fa-heart mx-1"></i>Yoonsang<br>
                         </small>
+
+                        <small class="text-light ft-gowundodum">
+                            본 사이트는 개인서버에서 호스팅중입니다.<br>
+                            과도한 트래픽 요청은 삼가해주세요.
+                        </small>
+
                     </div>
                 </div>
             </div>
@@ -765,14 +484,13 @@
     <div class="loading-page bg-black" id="welcome" style="opacity: 1 ;background-color: #0ABAB5 !important;">
         <div class="d-flex justify-content-center align-items-center" style="height: 100vh !important;">
             <div class="text-center">
-                <h1 class="ft-francisco mb-4" style="font-size: 2.5rem;">Wedding Invitation</h1>
-
-                <div class="img-crop border border-3 border-light shadow mb-4 mx-auto">
+                <h1 class="ft-francisco mb-0" style="font-size: 2.5rem;">Wedding Invitation</h1>
+                <h1 class="ft-crimsonpro" style="font-size: 1.4rem;">2024 / 10 / 19</h1>
+                <div class="img-crop border border-3 border-light shadow mx-auto">
                     <img src="./assets/images/open.png" alt="background">
                 </div>
 
-                <!-- <h1 class="ft-francisco my-4" style="font-size: 2.5rem;">Yoonsang and Mai</h1> -->
-                <div id="guest-name" data-message="Kepada Yth Bapak/Ibu/Saudara/i"></div>
+                
 
                 <button type="button" class="btn btn-light shadow rounded-4 mt-4" onclick="util.open(this)">
                     <i class="fa-solid fa-envelope-open me-2"></i>Open Invitation
@@ -885,122 +603,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha256-pQBbLkFHcP1cy0C8IhoSdxlm0CtcH5yJ2ki9jjgR03c=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.js" integrity="sha256-mvTaORw+RTgKnX6ZHT4P5Sc9DNP2TBpSGII7F3sT8iE=" crossorigin="anonymous"></script>
-    <script>
-        let formData = {};
-        // D-day 설정 (YYYY-MM-DD 형식)
-        const dday = new Date('2024-10-19'); // 예: 2024년 12월 25일
-    
-        // 현재 날짜 가져오기
-        const today = new Date();
-    
-        // D-day와 현재 날짜의 차이 계산 (밀리초 단위)
-        const diffTime = dday - today;
-    
-        // 일 단위로 변환
-        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-    
-        // 결과 표시
-        const countdownElement = document.getElementById('countdown');
-        
-        if (diffDays >= 0) {
-          countdownElement.innerHTML = `<span style="color: #ea7664; font-weight:bold;"> ${diffDays}</span>일 남았습니다.`;
-        } else {
-            countdownElement.innerHTML = ` <span style="color: #ea7664; font-weight:bold;">${Math.abs(diffDays)}</span>일 지났습니다.`;
-        }
-
-        function oninputPhone(target) {
-            target.value = target.value
-            .replace(/[^0-9]/g, '')
-            .replace(/(^0[789]0)([0-9]{4})([0-9]{4})|(^02.{0}|^01.{1}|[0-9]{3,4})([0-9]{3,4})([0-9]{4})/g, function(_, p1, p2, p3, p4, p5, p6) {
-                if (p1 && p2 && p3) {
-                    return p1 + '-' + p2 + '-' + p3;
-                } else {
-                    return p4 + '-' + p5 + '-' + p6;
-                }
-            });
-        }
-
-
-        const send = async (form) =>{
-            confetti({
-                origin: { y: 1 },
-                zIndex: 1057
-            });    
-            event.preventDefault(); 
-
-            const presence = form.querySelector('#presence').checked;
-            const name = form.querySelector('#name').value;
-            const phoneNumber = form.querySelector('#phonenumber').value;
-            const email = form.querySelector('#email').value;
-            const alergy = form.querySelector('#alergy').value;
-            const button = form.querySelector('button[type="submit"]');
-            const koreaSelected = form.querySelector('input[id="Korea"]:checked') !== null;
-            const japanSelected = form.querySelector('input[id="Japan"]:checked') !== null;
-            const regionCheckbox = form.querySelector('#terms-checkbox-37').checked;
-
-            // 국가 코드를 설정합니다.
-            let countryCode = "";
-            if (koreaSelected) {
-                countryCode = "+82";
-            } else if (japanSelected) {
-                countryCode = "+81";
-            }
-
-                // JSON 객체를 생성합니다.
-            formData = {
-                presence,
-                name,
-                phoneNumber: `${countryCode} ${phoneNumber}`,
-                email,
-                alergy,
-                regionCheckbox
-            };
-            let html_txt = `<div class="row"> <div class="col-4"> <p class="ft-gowundodum formTitle">참석여부 |</p> </div> <div class="col-8"> <p class="ft-gowundodum formContext" style="color:red">${presence ? '참석' : '미참석'}</p> </div> </div>`;
-            html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">성함 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${name}</p> </div> </div>`;
-            html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">전화번호 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${countryCode} ${phoneNumber}</p> </div> </div>`;
-            html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">메일주소 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${email}</p> </div> </div>`;
-            html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">알레르기 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${alergy}</p> </div> </div>`;
-            html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">거주 지역 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext" style="color:red"> ${regionCheckbox ? '간사이 이외' : '간사이'}</p> </div> </div>`;
-               // HTML 문자열을 생성합니다.
-            document.getElementById('form-confirm').innerHTML = html_txt;
-            $('#form-confirm').data('form', formData);
-            (new bootstrap.Modal('#modal-confirm')).show();
-        }
-
-        const confirm = () =>{
-            const data = $('#form-confirm').data('form');
-            $.ajax({
-                url: `https://script.google.com/macros/s/AKfycbyip8HaOXhabHgPFKNCRMumdDtzxXloAniEE_vEp4aUB2N0K64KFU7P_E7pzSYk5Tw6uQ/exec`, // form의 action 속성으로 URL 설정
-                type: `POST`, // form의 method 속성으로 요청 방식 설정
-                data: data, // form 데이터 설정
-                success: function(response){
-                    // 성공 시 수행할 작업                   
-                    formData = {};
-                    document.getElementById('form').reset();
-                    $('#modal-confirm').modal('hide');
-                },
-                error: function(xhr, status, error){
-                    // 오류 시 수행할 작업
-                    console.error(xhr.responseText);
-                }
-            });
-            // Fetch
-            
-            //초기화
-            
-        }
- 
-        const cancle = async (button) =>{
-            //마지막 초기화
-            formData = {};
-            document.getElementById('form').reset();
-        }
-
-        const inquiry = async (button) =>{
-            (new bootstrap.Modal('#modal-inquiry')).show();
-            
-        }
-      </script>
+    <script src="./js/func.js"></script>    
 </body>
 
 </html>
