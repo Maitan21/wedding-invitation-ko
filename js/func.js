@@ -44,7 +44,7 @@ const send = async (form) =>{
     const name = form.querySelector('#name').value;
     const phoneNumber = form.querySelector('#phonenumber').value;
     const email = form.querySelector('#email').value;
-    const alergy = form.querySelector('#alergy').value;
+    const allergy = form.querySelector('#allergy').value;
     const button = form.querySelector('button[type="submit"]');
     const koreaSelected = form.querySelector('input[id="Korea"]:checked') !== null;
     const japanSelected = form.querySelector('input[id="Japan"]:checked') !== null;
@@ -64,14 +64,14 @@ const send = async (form) =>{
         name,
         phoneNumber: `${countryCode} ${phoneNumber}`,
         email,
-        alergy,
+        allergy,
         regionCheckbox
     };
     let html_txt = `<div class="row"> <div class="col-4"> <p class="ft-gowundodum formTitle">참석여부 |</p> </div> <div class="col-8"> <p class="ft-gowundodum formContext" style="color:red">${presence ? '참석' : '미참석'}</p> </div> </div>`;
     html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">성함 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${name}</p> </div> </div>`;
     html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">전화번호 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${countryCode} ${phoneNumber}</p> </div> </div>`;
     html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">메일주소 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${email}</p> </div> </div>`;
-    html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">알레르기 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${alergy}</p> </div> </div>`;
+    html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">알레르기 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext">${allergy}</p> </div> </div>`;
     html_txt += `<div class="row"> <div class="col-4"> <p class=" ft-gowundodum formTitle">거주 지역 |</p> </div> <div class="col-8"> <p class=" ft-gowundodum formContext" style="color:red"> ${regionCheckbox ? '간사이 이외' : '간사이'}</p> </div> </div>`;
        // HTML 문자열을 생성합니다.
     document.getElementById('form-confirm').innerHTML = html_txt;
@@ -88,12 +88,13 @@ const confirm = () =>{
         success: function(response){
             // 성공 시 수행할 작업                   
             formData = {};
+            alert("전송되었습니다.")
             document.getElementById('form').reset();
             $('#modal-confirm').modal('hide');
         },
         error: function(xhr, status, error){
             // 오류 시 수행할 작업
-            console.error(xhr.responseText);
+            alert("전송에 실패하였습니다. 문의하기로 문의해주세요.")
         }
     });        
 }
