@@ -58,10 +58,8 @@ export const util = (() => {
 
     const guest = () => {
         const name = (new URLSearchParams(window.location.search)).get('to');
-        const guest = document.getElementById('guest-name');
 
         if (!name) {
-            guest.remove();
             document.getElementById('req-message').style.display = "none"
             document.getElementById('family-reception').style.display = "none"
             document.getElementById('family-photo').style.display = "none"
