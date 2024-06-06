@@ -64,7 +64,7 @@ export const util = (() => {
             document.getElementById('family-reception').style.display = "none"
             document.getElementById('family-photo').style.display = "none"
             return;
-        }else if(name=="가족"){
+        }else if(name=="family"){
             const reqeustMsg = `<div class="card-body border rounded-4 shadow p-3 m-3 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500" > <h1 class="sectionEng ft-crimsonpro mb-0" >REQUEST</h1> <h1 class="sectionHead ft-gowundodum" >요청</h1> <p class="ft-gowundodum mt-3 mb-4" style="font-size: 1rem;">
             사랑하는 친척 가족 여러분<br>
             13:30 부터 친족 대기실(5층)<br>

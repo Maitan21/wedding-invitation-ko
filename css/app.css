@@ -622,6 +622,13 @@ body:lang(jp){
   font-family: "M PLUS 1 Code", monospace;
 }
 
+.ft-tokumin {
+  font-family: "Kaisei Tokumin", serif;
+}
+.ft-opti {
+  font-family: "Kaisei Opti", serif;
+}
+
 .ft-serif{
   font-family: "Noto Serif JP", serif;
 }
