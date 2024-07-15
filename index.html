@@ -75,13 +75,13 @@
                 <div style="padding-bottom: 30px;">
                     <!-- img-crop -->
                     <div class="img-main border border-3 border-light shadow mx-auto">
-                        <img src="./assets/images/bg.png" alt="bg" onclick="util.modal(this)">
+                        <img src="./assets/images/bg.png" alt="bg" class="crop">
                     </div>
                 </div>
                 <!-- <p class="ft-gowundodum mb-1">　曺　允相　　 亀岡 真衣</p> -->
 
                 <h1 class="ft-gowundodum mb-2">윤　상｜마　이</h1>
-                <p class="ft-gowundodum mb-4">2024년 10월 19일 토요일<br>호텔 로열 클래식 오사카 20F 大空</p>
+                <p class="ft-gowundodum mb-4">2024년 10월 19일 토요일<br>호텔 로열 클래식 오사카 in Japan</p>
 
                 <a href="https://maps.app.goo.gl/N5sjUiN1pEjKyTAo7" target="_blank" class="btn btn-outline-light btn-sm rounded-pill shadow-sm mb-2 px-3">
                     <i class="fa-solid fa-map-location-dot me-2"></i>Google Maps
@@ -119,7 +119,9 @@
                     </div>      
 
                     <!-- <div class="ft-gowundodum" id="guest-name" data-message="친애하는"></div> -->
-                    <div id="req-message" class="pt-4"></div>
+                    <div class="pt-4" style="max-width:500px !important; margin: 0 auto;">
+                        <div id="req-message"></div>
+                    </div>
                      
                 </div>
 
@@ -226,21 +228,23 @@
                         <div id="family-reception" class="py-2" data-aos="fade-left" data-aos-duration="1500">
 
                         </div>
-                        <div id="family-photo" class="py-2" data-aos="fade-left" data-aos-duration="1500">
 
-                        </div>
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
                             <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">접수・대기실</h1>
-                            <p>14:30　5층 ー 日和</p>
+                            <p>14:00　7층 ー 木漏日</p>
                         </div>
                         <div class="py-2" data-aos="fade-right" data-aos-duration="1500">
                             <h1 class="ft-gowundodum" style="font-size: 1.1rem; font-weight:bold">거식</h1>
                             <p>15:00　20층 ー 大空</p>
                         </div>
 
+                        <div id="family-photo" class="py-2" data-aos="fade-left" data-aos-duration="1500">
+
+                        </div>
+
                         <div class="py-2" data-aos="fade-left" data-aos-duration="1500">
                             <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">피로연</h1>
-                            <p>15:30　7층 ー 木漏日</p>
+                            <p>16:00　7층 ー 木漏日</p>
                         </div>
                     </div>
 
@@ -335,7 +339,7 @@
                         <form id="form" action="" onsubmit="send(this);">
                             <h1 class="sectionEng ft-crimsonpro mb-0" >RSVP</h1>
                             <h1 class="sectionHead ft-gowundodum" >참석 여부</h1>
-                            <p class=" ft-gowundodum" style="font-size: 0.8rem; color: red;">※결혼식 참석인원이 한정된 관계로 <br>번거로우시겠지만 참석 여부를 회신해 주시기 바랍니다. </p>
+                            <p class=" ft-gowundodum" style="font-size: 0.8rem; color: red;">결혼식 참석인원이 한정된 관계로 번거로우시겠지만 <br>참석 여부를 9월6일까지 회신해 주시기 바랍니다. </p>
                             <div class="row">
                                 <div class="col-4 ft-gowundodum" style="text-align: right;">미참석</div>
                                 <div class="col-4">
@@ -430,7 +434,7 @@
                                     
                                 </label>
                                 </div>                                      
-                            <div class="mt-2 ft-gowundodum" style="font-size:0.8rem; color:red; font-weight:bold;">교통비 일괄 3만엔 지원</div>
+                            <!-- <div class="mt-2 ft-gowundodum" style="font-size:0.8rem; color:red; font-weight:bold;">교통비 일괄 3만엔 지원</div> -->
                             
                             <button type="submit" class="btn btn-light shadow rounded-4 mt-2">
                                 <i class="fa-solid fa-envelope me-2 "></i><span class="ft-gowundodum">확인</span>
