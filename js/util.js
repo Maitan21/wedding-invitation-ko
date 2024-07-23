@@ -62,7 +62,7 @@ export const util = (() => {
         if (!name) {
             const reqeustMsg = `<div class="card-body border rounded-4 shadow p-3 m-3 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500" > <h1 class="sectionEng ft-crimsonpro mb-0" >Message</h1> <h1 class="sectionHead ft-gowundodum" >메세지</h1> <p class="ft-gowundodum mt-3 mb-4" style="font-size: 1rem;">
             당일은 5층 크로크에 짐을 맡겨주시고<br>
-            접수 시간이 되시면 9층 접수처로 와주시기 바랍니다.<br><br>
+            접수 시간이 되시면 7층 접수처로 와주시기 바랍니다.<br><br>
 
             환복은 4층 탈의실을 이용해주세요.<br><br>
 
