@@ -654,6 +654,12 @@ body:lang(jp){
     font-family: gowun dodum,sans-serif;
 }
 
+.song-myung-regular {
+  font-family: "Song Myung", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .font-arabic {
     font-family: 'Noto Naskh Arabic', serif !important;
 }
