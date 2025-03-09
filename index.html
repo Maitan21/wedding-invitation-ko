@@ -158,10 +158,8 @@
                 <div data-aos="fade-down" data-aos-duration="1500">
                     <h1 class="sectionEng ft-crimsonpro mb-0" >Galeri</h1>
                     <h1 class="sectionHead ft-gowundodum mb-4" >갤러리</h1>
-                    
                 </div>
                
-
                 <div class="gallGridWrapper" data-aos="fade-down" data-aos-duration="1500">
                         <div data-url="./assets/gallery/2.JPG" style="background-image:url(./assets/gallery/2.JPG)" alt="gambar 1" class="item"  onclick="util.modal(this)"></div>
                         <div data-url="./assets/gallery/3.JPG" style="background-image:url(./assets/gallery/3.JPG)" alt="gambar 2" class="item"  onclick="util.modal(this)"></div>
@@ -173,7 +171,6 @@
                         <div data-url="./assets/gallery/9.JPG" style="background-image:url(./assets/gallery/9.JPG)" alt="gambar 8" class="item"  onclick="util.modal(this)"></div>
                         <div data-url="./assets/gallery/10.JPG" style="background-image:url(./assets/gallery/10.JPG)" alt="gambar 9" class="item"  onclick="util.modal(this)"></div>
                 </div>
-
 
                 <div  data-aos="fade-up" data-aos-duration="1500">
                     <div class="border rounded-pill shadow py-2 px-4 mx-2 mt-4 mb-4">
@@ -319,7 +316,6 @@
                 </div>
                 </div>
             </div>
-           
         </div>
 
         <!-- Wave Separator -->
@@ -333,6 +329,14 @@
     <footer class="bg-black">
         <div class="container">
             <div class="text-center">
+                <div class="py-2" data-aos="fade-up" data-aos-duration="1500">
+                    <h1 class="sectionEng ft-crimsonpro mb-0" >In Japan on October 19, 2024</h1>
+                </div>
+                
+                <div data-aos="fade-right" data-aos-duration="1500">
+                    <video style="width:100%" id="myVideo" src="./assets/images/endroll.mp4" controls muted></video>
+                </div>
+                
                 <div class="py-4">
                     <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="inquiry(this)">
                         <i class="fa-sharp fa-regular fa-comment"></i><span class="ft-gowundodum" style="margin-left: 0.5rem !important;">문의하기</span>
@@ -454,7 +458,38 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha256-pQBbLkFHcP1cy0C8IhoSdxlm0CtcH5yJ2ki9jjgR03c=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.js" integrity="sha256-mvTaORw+RTgKnX6ZHT4P5Sc9DNP2TBpSGII7F3sT8iE=" crossorigin="anonymous"></script>
-    <script src="./js/func.js"></script>  
+    <script src="./js/func.js"></script> 
+    <script>
+        // 비디오 요소 선택
+        const video = document.getElementById('myVideo');
+
+        // 비디오가 화면에 보이는지 확인하는 함수
+        function isVideoInViewport() {
+            const rect = video.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
+
+        // 스크롤 또는 리사이즈 이벤트 발생 시 호출되는 함수
+        function handleScrollOrResize() {
+            if (isVideoInViewport()) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        }
+
+        // 이벤트 리스너 등록
+        window.addEventListener('scroll', handleScrollOrResize);
+        window.addEventListener('resize', handleScrollOrResize);
+
+        // 초기 실행
+        handleScrollOrResize();
+    </script> 
     
 </body>
 
