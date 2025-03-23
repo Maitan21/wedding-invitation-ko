@@ -59,59 +59,17 @@ export const util = (() => {
     const guest = () => {
         const name = (new URLSearchParams(window.location.search)).get('to');
 
-        if (!name) {
-            // const reqeustMsg = `<div class="card-body border rounded-4 shadow p-3 m-3 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500" > <h1 class="sectionEng ft-crimsonpro mb-0" >Message</h1> <h1 class="sectionHead ft-gowundodum" >메세지</h1> <p class="ft-gowundodum mt-3 mb-4" style="font-size: 1rem;">
-            // 당일은 5층 크로크에 짐을 맡겨주시고<br>
-            // 접수 시간이 되시면 7층 접수처로 와주시기 바랍니다.<br><br>
+ 
+        const reqeustMsg = `<div class="card-body border rounded-4 shadow p-3 m-3 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500" ><h1 class="sectionHead ft-gowundodum" >사랑이 가득 담긴 쌀 화환</h1> <p class="ft-gowundodum mt-3 mb-4" style="font-size: 1rem;">
+        저희의 새로운 출발을<br>
+        축하해 주시는 마음을<br>
+        쌀로 보내주시면, <br>
+        이를 소중한 곳에 기부하여<br>
+        더욱 뜻깊은 결혼식으로 만들겠습니다.
+        </p></div>`
 
-            // 환복은 4층 탈의실을 이용해주세요.<br><br>
-
-            // 차를 가지고 오시는 경우<br>
-            // 호텔병설주차장 예약이 가능하므로<br>
-            // 전날까지 신랑 신부에게 연락주세요.
-            // </p></div>`
-
-            // const receptionTime = `
-            //     <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">접수・대기실</h1>
-            //     <p>14:30　7층 ー 木漏日</p>
-            // `
-
-            // document.getElementById('reception-time').innerHTML =　receptionTime
-            // document.getElementById('req-message').innerHTML = reqeustMsg;
-            // document.getElementById('family-reception').style.display = "none"
-            // document.getElementById('family-photo').style.display = "none"
-            return;
-        }else if(name=="family"){
-        //     const reqeustMsg = `<div class="card-body border rounded-4 shadow p-3 m-3 aos-init aos-animate" data-aos="fade-left" data-aos-duration="1500" > <h1 class="sectionEng ft-crimsonpro mb-0" >REQUEST</h1> <h1 class="sectionHead ft-gowundodum" >요청</h1> <p class="ft-gowundodum mt-3 mb-4" style="font-size: 1rem;">
-        //     사랑하는 친척 가족 여러분<br>
-        //     13:30 부터 친족 대기실(5층)<br>
-        //     이용이 가능합니다.<br> 
-        //     15:30 에 친족 단체 촬영이 있습니다.(6층) </p> </div>`
-
-        //     const receptionTime = `
-        //     <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">접수・대기실</h1>
-        //     <p>14:00　7층 ー 木漏日</p>
-        // `
-        //     const familyReception = `
-        //     <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">친족 대기실</h1>
-        //     <p>13:30　5층</p>
-        //     `
-        //     const familyPhoto = `
-        //     <h1 class="ft-gowundodum" style="font-size: 1.1rem;font-weight:bold">친족 단체 사진촬영</h1>
-        //     <p>15:30　6층 ー Studio</p>
-        //     `
-
-        //     document.getElementById('reception-time').innerHTML =　receptionTime
-        //     document.getElementById('req-message').innerHTML = reqeustMsg;
-        //     document.getElementById('family-reception').innerHTML = familyReception;
-        //     document.getElementById('family-photo').innerHTML = familyPhoto;
-        }
-
-        // const div = document.createElement('div');
-        // div.classList.add('m-2');
-        // div.innerHTML = `<p class="mt-0 mb-1 mx-0 p-0">${guest.getAttribute('data-message')}</p><h2 class="">${escapeHtml(name)}</h2>`;
-
-        // guest.appendChild(div);
+        document.getElementById('req-message').innerHTML = reqeustMsg;
+        return;
     };
 
  
