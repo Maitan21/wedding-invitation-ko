@@ -68,6 +68,15 @@
 
     gtag('config', 'G-TNZF0K6JBN');
     </script>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Hs90nka" crossorigin="anonymous"></script>
+
+    <script>
+    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+    Kakao.init('83870af9d75d5d5354501c02dc70f2a4');
+
+    // SDK 초기화 여부를 판단합니다.
+    console.log(Kakao.isInitialized());
+    </script>
 </head>
 
 <body>
@@ -439,8 +448,8 @@
                 </div>
                 
                 <div class="py-4">
-                    <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="inquiry(this)">
-                        <i class="fa-sharp fa-regular fa-comment"></i><span class="ft-gowundodum" style="margin-left: 0.5rem !important;">문의하기</span>
+                    <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="kakao(this)">
+                        <i class="fa-sharp fa-regular fa-comment"></i><span class="ft-gowundodum" style="margin-left: 0.5rem !important;">청첩장 공유하기</span>
                     </button>
                 </div>
               
@@ -521,40 +530,6 @@
     </div>
 
 
-    <div class="modal fade" id="modal-inquiry"  data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl" style="max-width:500px !important;">
-            <div class="modal-content rounded-4">
-                <div class="modal-body p-4">
-                    <div class="text-center">
-                        <div class="mb-4">
-                            <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="location.href='http://qr.kakao.com/talk/o4Wlkrfz.I1cBMGzfvO0TkJCm5o-'" style="background:#fee500;">
-                                <span class="ft-gowundodum">카카오톡</span>
-                            </button>
-                        </div>
-                       
-                        <div class="mb-4">
-                            <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="location.href='https://line.me/ti/p/Qkh7adu8UE'" style="background: #1ec800;">
-                                <span class="ft-gowundodum">라인</span>
-                             </button>
-                        </div>
-
-                        <div class="mb-4">
-                            <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="location.href='https://www.instagram.com/j.y.s_94?igsh=NW5saXBhdjdrYWlj&utm_source=qr'" style="background: #cda8dc;">
-                                <span class="ft-gowundodum">인스타그램</span>
-                            </button>
-                        </div>
-
-                        <div class="mb-4">
-                            <button type="button" data-aos="fade-up" class="btn btn-light shadow rounded-4" onclick="location.href='mailto:yoonsang.cho.94@gmail.com'" >
-                                <span class="ft-gowundodum">Gmail</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Dependencies JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha256-CDOy6cOibCWEdsRiZuaHf8dSGGJRYuBGC+mjoJimHGw=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" integrity="sha256-pQBbLkFHcP1cy0C8IhoSdxlm0CtcH5yJ2ki9jjgR03c=" crossorigin="anonymous"></script>
@@ -602,6 +577,15 @@
             alert("복사되었습니다");
         }
     </script>
+
+    <script>
+        function kakao(value){
+            Kakao.Share.sendCustom({
+                templateId: 118657,
+            });
+        }
+    </script>
+    
     
 </body>
 

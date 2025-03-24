@@ -1,0 +1,21 @@
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.4/kakao.min.js" integrity="sha384-DKYJZ8NLiK8MN4/C5P2dtSmLQ4KwPaoqAfyA/DfmEc1VDxu4yyC7wy6K1Hs90nka" crossorigin="anonymous"></script>
+
+<script>
+    // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해야 합니다.
+    Kakao.init('83870af9d75d5d5354501c02dc70f2a4');
+
+    // SDK 초기화 여부를 판단합니다.
+    console.log(Kakao.isInitialized());
+  </script>
+<a id="kakaotalk-sharing-btn" href="javascript:;">
+  <img src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+    alt="카카오톡 공유 보내기 버튼" />
+</a>
+
+<script>
+    Kakao.Share.sendCustom({
+        container: '#kakaotalk-sharing-btn',
+        templateId: 118657,
+      });
+</script>
+
