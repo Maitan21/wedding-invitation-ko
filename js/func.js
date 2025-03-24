@@ -1,6 +1,6 @@
 let formData = {};
 // D-day 설정 (YYYY-MM-DD 형식)
-const dday = new Date('2025-05-05'); // 예: 2024년 12월 25일
+const dday = new Date('2025-05-03'); // 예: 2024년 12월 25일
 
 // 현재 날짜 가져오기
 const today = new Date();
